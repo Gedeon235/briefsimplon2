@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Soumara - Cuisine Authentique</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        /* Styles personnalisés compatibles avec Bootstrap */
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #F5DEB3;
+            --accent-color: #A52A2A;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 80px;
+            background-color: #96826b;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bg-primary-custom {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/face.jpeg') center/cover no-repeat;
+            padding: 120px 0;
+            color: white;
+        }
+        
+        .menu-item {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-img {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-cup-hot-fill me-2"></i>
+                Restaurant Soumara
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galerie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4">Bienvenue au Restaurant Soumara</h1>
+            <p class="lead mb-4">Découvrez une expérience culinaire exceptionnelle avec des saveurs authentiques</p>
+            <a href="#reservation" class="btn btn-warning btn-lg">Réserver une table</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary-custom">Notre Menu</h2>
+                <p class="lead">Découvrez nos délicieuses spécialités</p>
+            </div>
+            
+            <ul class="nav nav-pills justify-content-center mb-4" id="menuTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="entrees-tab" data-bs-toggle="pill" data-bs-target="#entrees" type="button" role="tab" aria-controls="entrees" aria-selected="true">Entrées</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="plats-tab" data-bs-toggle="pill" data-bs-target="#plats" type="button" role="tab" aria-controls="plats" aria-selected="false">Plats Principaux</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="desserts-tab" data-bs-toggle="pill" data-bs-target="#desserts" type="button" role="tab" aria-controls="desserts" aria-selected="false">Desserts</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="menuTabContent">
+                <div class="tab-pane fade show active" id="entrees" role="tabpanel" aria-labelledby="entrees-tab">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/plat.jpeg" class="card-img-top" alt="Salade méditerranéenne fraîche" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Salade Méditerranéenne</h5>
+                                    <p class="card-text">Salade fraîche avec tomates, concombres, olives et feta.</p>
+                                    <p class="fw-bold text-primary-custom">6000 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/plat1.jpeg" class="card-img-top" alt="Soupe traditionnelle marocaine" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Harira Traditionnelle</h5>
+                                    <p class="card-text">Soupe marocaine authentique aux lentilles et épices.</p>
+                                    <p class="fw-bold text-primary-custom">7000 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/plat.jpeg" class="card-img-top" alt="Assortiment de briouates" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Briouates Marocains</h5>
+                                    <p class="card-text">Feuilletés croustillants farcis à la viande et aux amandes.</p>
+                                    <p class="fw-bold text-primary-custom">2000 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="plats" role="tabpanel" aria-labelledby="plats-tab">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/legum.jpeg" class="card-img-top" alt="Couscous royal avec légumes et viande" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Couscous Royal</h5>
+                                    <p class="card-text">Couscous traditionnel avec légumes, agneau et poulet.</p>
+                                    <p class="fw-bold text-primary-custom">2500 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/taje.jpeg" class="card-img-top" alt="Tajine aux pruneaux et amandes" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tajine aux Pruneaux</h5>
+                                    <p class="card-text">Tajine d'agneau sucré-salé aux pruneaux et amandes.</p>
+                                    <p class="fw-bold text-primary-custom">3000 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/viande.jpeg" class="card-img-top" alt="Brochettes de viande marinée" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Brochettes Marocaines</h5>
+                                    <p class="card-text">Brochettes de bœuf marinées aux épices et herbes.</p>
+                                    <p class="fw-bold text-primary-custom">5000 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/patisserie.jpeg" class="card-img-top" alt="Pâtisseries orientales variées" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pâtisseries Orientales</h5>
+                                    <p class="card-text">Assortiment de pâtisseries au miel et aux amandes.</p>
+                                    <p class="fw-bold text-primary-custom">4500 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/thé.jpeg" class="card-img-top" alt="Thé à la menthe marocain" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Thé à la Menthe</h5>
+                                    <p class="card-text">Thé vert traditionnel à la menthe fraîche et sucre.</p>
+                                    <p class="fw-bold text-primary-custom">2000 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card menu-item h-100">
+                                <img src="./assets/gazell.jpeg" class="card-img-top" alt="Corne de gazelle pâtisserie" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cornes de Gazelle</h5>
+                                    <p class="card-text">Pâtisseries fines fourrées aux amandes et fleur d'oranger.</p>
+                                    <p class="fw-bold text-primary-custom">2750 FCFA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary-custom">Galerie</h2>
+                <p class="lead">Découvrez l'ambiance du Restaurant Soumara</p>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <img src="./assets/devant.jpeg" alt="Intérieur du restaurant" class="img-fluid gallery-img rounded">
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/vu.jpeg" alt="Plat gastronomique présenté" class="img-fluid gallery-img rounded">
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/face.jpeg" alt="Cuisine équipée du restaurant" class="img-fluid gallery-img rounded">
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/interface.jpeg" alt="Chef préparant un plat" class="img-fluid gallery-img rounded">
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/salle.jpeg" alt="Table dressée pour le dîner" class="img-fluid gallery-img rounded">
+                </div>
+                <div class="col-md-4">
+                    <img src="./assets/sall.jpeg" alt="Vue extérieure du restaurant" class="img-fluid gallery-img rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold text-primary-custom mb-4">Notre Histoire</h2>
+                    <p class="lead">Fondé en 2005, le Restaurant Soumara apporte les saveurs authentiques de la cuisine marocaine à Paris.</p>
+                    <p>Notre chef, Mohamed Soumara, a grandi dans les médinas de Marrakech où il a appris les secrets culinaires transmis de génération en génération.</p>
+                    <p>Nous nous engageons à utiliser des ingrédients frais et locaux pour créer des plats qui racontent une histoire et évoquent les riches traditions culinaires du Maroc.</p>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary-custom text-white rounded-circle p-3 me-3">
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Meilleur Restaurant Marocain 2022</h5>
+                                <p class="mb-0">Prix décerné par le Guide Culinaire Parisien</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary-custom text-white rounded-circle p-3 me-3">
+                                <i class="bi bi-award-fill"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Certifié Authentique</h5>
+                                <p class="mb-0">Cuisine traditionnelle certifiée par l'Institut Marocain de Gastronomie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 h-screen">
+                    <img src="./assets/legum.jpeg" alt="Notre chef préparant un plat traditionnel" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Reservation Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary-custom">Contact & Réservations</h2>
+                <p class="lead">Nous sommes à votre disposition</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <form id="reservation">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Nom complet</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Téléphone</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="guests" class="form-label">Nombre de personnes</label>
+                                <input type="number" class="form-control" id="guests" min="1" max="20" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="date" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="date" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="time" class="form-label">Heure</label>
+                                <input type="time" class="form-control" id="time" required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="message" class="form-label">Message spécial (allergies, préférences...)</label>
+                                <textarea class="form-control" id="message" rows="3"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary-custom btn-lg">Réserver maintenant</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Horaires d'ouverture</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Lundi - Jeudi</span>
+                                    <span>11h30 - 14h30 & 18h30 - 22h30</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Vendredi - Samedi</span>
+                                    <span>11h30 - 15h00 & 18h00 - 23h30</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Dimanche</span>
+                                    <span>11h30 - 16h00</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Nous trouver</h5>
+                            <p class="card-text">
+                                <i class="bi bi-geo-alt-fill text-primary-custom me-2"></i>
+                                123 Avenue Garta Tombalbaye
+                            </p>
+                            <p class="card-text">
+                                <i class="bi bi-telephone-fill text-primary-custom me-2"></i>
+                                +235 68 65 57 86
+                            </p>
+                            <p class="card-text">
+                                <i class="bi bi-envelope-fill text-primary-custom me-2"></i>
+                                contact@restaurant-soumara.fr
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">Restaurant Soumara</h5>
+                    <p>Apportant les saveurs authentiques du Maroc à Paris depuis 2005.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Accueil</a></li>
+                        <li class="mb-2"><a href="#menu" class="text-white">Menu</a></li>
+                        <li class="mb-2"><a href="#gallery" class="text-white">Galerie</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white">À propos</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-uppercase mb-4">Newsletter</h5>
+                    <p>Abonnez-vous à notre newsletter pour recevoir nos actualités et offres spéciales.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Votre email" aria-label="Votre email">
+                        <button class="btn btn-primary-custom" type="button">S'abonner</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Restaurant Soumara. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">
+                        <a href="#" class="text-white">Politique de confidentialité</a> | 
+                        <a href="#" class="text-white">Mentions légales</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
